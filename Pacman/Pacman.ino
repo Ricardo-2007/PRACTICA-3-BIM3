@@ -52,31 +52,23 @@ void setup(){
  PacmanMatrix.setIntensity(0, 15);
  PacmanMatrix.clearDisplay(0);
  Serial.println("uso de la matriz led");
- 
-  
 }
 
 void loop(){
  valor = analogRead(ch_A0);   
  tiempo_espera = map(valor,0,1023,50,1500);
- Pacmanabierto();
+ bocabierta();
  delay(tiempo_espera);
- Pacmancerrado();
+ bocacerrada();
  delay(tiempo_espera);
- 
-
 }
-
-
-void Pacmanabierto(){
+void bocaabierta(){
 for(int i=0; i<8; i++)
  {
  PacmanMatrix.setRow(0,i,pacman_boca_abierta[i]);
  }  
 }
-
-
-void Pacmancerrado(){
+void bocacerrada(){
 for(int i=0; i<8; i++)
  {
  PacmanMatrix.setRow(0,i,pacman_boca_cerrada[i]);
